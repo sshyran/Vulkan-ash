@@ -13,6 +13,7 @@ pub use self::image_compression_control::ImageCompressionControl;
 pub use self::image_drm_format_modifier::ImageDrmFormatModifier;
 pub use self::metal_surface::MetalSurface;
 pub use self::physical_device_drm::PhysicalDeviceDrm;
+pub use self::pipeline_properties::PipelineProperties;
 pub use self::private_data::PrivateData;
 pub use self::tooling_info::ToolingInfo;
 
@@ -31,5 +32,6 @@ mod image_compression_control;
 mod image_drm_format_modifier;
 mod metal_surface;
 mod physical_device_drm;
+mod pipeline_properties;
 mod private_data;
 mod tooling_info;

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added `VK_EXT_pipeline_properties` device extension (#622)
 - Added `VK_EXT_image_compression_control` device extension (#621)
 - Added `VK_KHR_ray_tracing_maintenance1` device extension (#620)
 - Update Vulkan-Headers to 1.3.213 (#605, #608, #619)
