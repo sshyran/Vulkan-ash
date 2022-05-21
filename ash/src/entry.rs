@@ -214,9 +214,10 @@ impl Entry {
     /// <https://www.khronos.org/registry/vulkan/specs/1.3-extensions/man/html/vkCreateInstance.html>
     ///
     /// # Safety
-    /// In order for the created [`Instance`] to be valid for the duration of its
-    /// usage, the [`Entry`](Self) this was called on must be dropped later than the
-    /// resulting [`Instance`].
+    ///
+    /// In order for the created [`Instance`] to be valid for the duration of its usage,
+    /// the [`Entry`] this was called on must be [dropped][`drop()`] *later* than when
+    /// the resulting [`Instance`] is destroyed through [`Instance::destroy_instance()`].
     pub unsafe fn create_instance(
         &self,
         create_info: &vk::InstanceCreateInfo,

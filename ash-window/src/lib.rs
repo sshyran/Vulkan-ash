@@ -14,9 +14,10 @@ use ash::extensions::ext; // portability extensions
 ///
 /// # Safety
 ///
-/// In order for the created [`vk::SurfaceKHR`] to be valid for the duration of its
-/// usage, the [`Instance`] this was called on must be dropped later than the
-/// resulting [`vk::SurfaceKHR`].
+/// In order for the created [`vk::SurfaceKHR`] to be valid for the duration of its usage,
+/// the [`Instance`] this was called on must be [destroyed][`Instance::destroy_instance()`]
+/// *later* than when the resulting [`vk::SurfaceKHR`] is destroyed through [`khr::Surface::destroy_surface()`].
+/// See the [`Entry::create_instance()`] documentation for more destruction ordering rules on [`Instance`].
 pub unsafe fn create_surface(
     entry: &Entry,
     instance: &Instance,

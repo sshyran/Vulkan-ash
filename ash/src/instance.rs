@@ -335,9 +335,11 @@ impl Instance {
     /// <https://www.khronos.org/registry/vulkan/specs/1.3-extensions/man/html/vkCreateDevice.html>
     ///
     /// # Safety
-    /// In order for the created [`Device`] to be valid for the duration of its
-    /// usage, the [`Instance`] this was called on must be dropped later than the
-    /// resulting [`Device`].
+    ///
+    /// In order for the created [`Device`] to be valid for the duration of its usage,
+    /// the [`Instance`] this was called on must be [destroyed][`Instance::destroy_instance()`]
+    /// *later* than when the resulting [`Device`] is destroyed through [`Device::destroy_device()`].
+    /// See the [`crate::Entry::create_instance()`] documentation for more destruction ordering rules on [`Instance`].
     #[inline]
     pub unsafe fn create_device(
         &self,
